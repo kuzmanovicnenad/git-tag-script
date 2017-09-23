@@ -69,24 +69,24 @@ fi
 
 if [[ $runTest -eq 0 ]]; then
   echo Running tests...
-  valid="$(npm test | grep -o 'failing')"
+  valid="$(npm test | grep -o 'Test failed')"
     if [[ $valid = "failing" ]]; then
       echo Tests are failing
       exit
     fi
 fi
 
-echo Building production lib...
-buildProd="$(npm run build-prod)"
-echo buildProd $buildProd
-if [[ $buildProd = "failing" ]]; then
-  echo Can\'t build production lib
-  exit
-fi
+#echo Building production lib...
+#buildProd="$(npm run build-prod)"
+#echo buildProd $buildProd
+#if [[ $buildProd = "failing" ]]; then
+ # echo Can\'t build production lib
+ # exit
+#fi
 
-git add .
-git commit -m "Production lib $version"
-git push
+#git add .
+#git commit -m "Production lib $version"
+#git push
  
 #echo Creating tag $version ...
 #git tag -a $version -m "$message"
