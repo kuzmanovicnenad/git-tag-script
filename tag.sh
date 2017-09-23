@@ -67,9 +67,6 @@ if  [[ ! $(git merge develop) ]]; then
   exit
 fi
 
-echo runTEst $runTest
-echo (( runtest!=0 ))
-
 if [[ $runTest != 0 ]]; then
   echo Running tests...
   valid="$(npm test | grep -o 'failing')"
