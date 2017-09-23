@@ -67,7 +67,10 @@ if  [[ ! $(git merge develop) ]]; then
   exit
 fi
 
-if [ $runTest != 0 ]; then
+echo runTEst $runTest
+echo (( runtest!=0 ))
+
+if [[ $runTest != 0 ]]; then
   echo Running tests...
   valid="$(npm test | grep -o 'failing')"
     if [[ $valid = "failing" ]]; then
@@ -87,11 +90,12 @@ fi
 git add .
 git commit -m "Production lib $version"
 git push
-    
-echo Creating tag $version ...
-git tag -a $version -m "$message"
-echo Pushing tag to origin... 
-git push origin $version
+ 
+#echo Creating tag $version ...
+#git tag -a $version -m "$message"
+#echo Pushing tag to origin... 
+#git push origin $version
+
 
 echo Done
 
