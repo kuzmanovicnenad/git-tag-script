@@ -11,16 +11,15 @@ while getopts ":v:m:" opt; do
   esac
 done
 
-if [ -z "$message" ]
-then
-  echo Missing message argument
-  exit
-fi
-
-
 if [ -z "$version" ]
 then
   echo Mising version argument
+  exit
+fi
+
+if [ -z "$message" ]
+then
+  echo Missing message argument
   exit
 fi
 
@@ -58,12 +57,12 @@ else
       exit
     else
     echo Creating tag $version ...
-    git tag -a $version -m '$message'
+    git tag -a $version -m "$message"
     echo Pushing tag to origin... 
     git push origin $version
 
   fi fi fi fi fi
 fi
 
-echo done
+echo Done
 
