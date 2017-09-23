@@ -70,6 +70,10 @@ fi
 if [[ $runTest -eq 0 ]]; then
   echo Running tests...
   valid="$(npm test | grep -o 'Test failed')"
+echo valid $valid
+x="$(npm test)"
+echo x $x
+
     if [[ $valid = "failing" ]]; then
       echo Tests are failing
       exit
