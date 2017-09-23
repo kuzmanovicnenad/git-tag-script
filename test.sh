@@ -1,6 +1,22 @@
 #!/bin/bash
 
-version=$1
+while getopts ":v:m:" opt; do
+  case $opt in
+    v) version="$OPTARG"
+    ;;
+    m) message="$OPTARG"
+    ;;
+    \?) echo "Invalid option -$OPTARG" >&2
+    ;;
+  esac
+done
+
+if [ -z "$message" ]
+then
+  echo Missing message argument
+  exit
+fi
+
 
 if [ -z "$version" ]
 then
@@ -42,7 +58,7 @@ else
       exit
     else
     echo Creating tag $version ...
-    git tag -a $version -m '$version'
+    git tag -a $version -m '$message'
     echo Pushing tag to origin... 
     git push origin $version
 
