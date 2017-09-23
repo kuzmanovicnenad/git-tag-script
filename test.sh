@@ -17,6 +17,7 @@ else
   git pull
   git checkout master
   git pull
+  git merge develop
 fi
 
 
