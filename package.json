@@ -1,7 +1,7 @@
 {
-  "name": "test-repo",
+  "name": "git-tag-script",
   "version": "1.0.0",
-  "description": "",
+  "description": "Git tag script",
   "main": "test.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,11 +10,16 @@
     "type": "git",
     "url": "git+https://github.com/kuzmanovicnenad/test.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Nenad Kuzmanovic <kuzma86@gmail.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kuzmanovicnenad/test/issues"
   },
- "private": true,
- "homepage": "https://github.com/kuzmanovicnenad/test#readme"
+  "private": true,
+  "homepage": "https://github.com/kuzmanovicnenad/test#readme",
+  "keywords": [
+    "git",
+    "tag",
+    "bash"
+  ]
 }
