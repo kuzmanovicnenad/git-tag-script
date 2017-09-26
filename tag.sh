@@ -97,17 +97,7 @@ if [[ $(npm run build-prod) ]]; then
 
 else
   echo Build-prod script failed
-fi
-
-#git add .
-#git commit -m "Production lib $version"
-#git push
- 
-#echo Creating tag $version ...
-#git tag -a $version -m "$message"
-#echo Pushing tag to origin... 
-#git push origin $version
-
+if
 
 echo Done
 
