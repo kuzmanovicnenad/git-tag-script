@@ -97,7 +97,7 @@ if [[ $(npm run build-prod) ]]; then
 
 else
   echo Build-prod script failed
-if
+fi
 
 echo Done
 
