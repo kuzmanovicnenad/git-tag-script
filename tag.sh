@@ -78,26 +78,19 @@ fi
 
 echo Building production lib...
 
-#{ 
-#npm run build-prod 
-#} || {
-#echo 1234
-
-
-
 if [[ $(npm run build-prod) ]]; then
   git add .
   git commit -m "Production lib $version"
   git push 
   
-  echo Creating tag $version
+  echo Creating tag $version ...
   git tag -a $version -m "$message"
-  echo Pushing tag to origin
+  echo Pushing tag to origin...
   git push origin $version
 
 else
   echo Build-prod script failed
 fi
 
-echo Done
+echo Done.
 
