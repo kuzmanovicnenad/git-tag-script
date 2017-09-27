@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kuzmanovicnenad/test.git"
+    "url": "git+https://github.com/kuzmanovicnenad/git-tag-scrip.git"
   },
   "author": "Nenad Kuzmanovic <kuzma86@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kuzmanovicnenad/test/issues"
+    "url": "https://github.com/kuzmanovicnenad/git-tag-scrip/issues"
   },
   "private": true,
-  "homepage": "https://github.com/kuzmanovicnenad/test#readme",
+  "homepage": "https://github.com/kuzmanovicnenad/git-tag-scrip#readme",
   "keywords": [
     "git",
     "tag",
