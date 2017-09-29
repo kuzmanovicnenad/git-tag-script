@@ -79,14 +79,32 @@ fi
 echo Building production lib...
 
 if [[ $(npm run build-prod) ]]; then
-  git add .
-  git commit -m "Production lib $version"
-  git push 
+
+  echo Pushing changes to master...
+  git add /dist
+  if  [[ ! $(git commit -m "Production lib $version") ]]; then
+    echo Can\'t commit changes to master
+    exit
+  fi
   
+  if  [[ ! $(git push) ]]; then
+    echo Can\'t push changes to master
+    exit
+  fi
+   
   echo Creating tag $version ...
-  git tag -a $version -m "$message"
+  
+  if  [[ ! $(git tag -a $version -m "$message") ]]; then
+    echo Can\'t create a tag $version
+    exit
+  fi
+  
   echo Pushing tag to origin...
-  git push origin $version
+  
+  if  [[ ! $(git push origin $version) ]]; then
+    echo Can\'t push tag to origin
+    exit
+  fi
 
 else
   echo Build-prod script failed
