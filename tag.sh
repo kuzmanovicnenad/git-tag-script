@@ -41,27 +41,27 @@ echo Checking out develop...
 if [[ ! $(git checkout develop) ]]; then
   echo Can\'t checkout develop
   exit
-fi 
+fi
 
 echo Pulling develop...
 if [[ ! $(git pull) ]]; then
   echo Can\'t pull develop
   exit
-fi 
+fi
 
 echo Checking out master...
 if [[ ! $(git checkout master) ]]; then
   echo Can\'t checkout master
   exit
-fi 
-  
+fi
+
 echo Pulling master...
 if [[ ! $(git pull) ]]; then
   echo Can\'t pull master
   exit
 fi
- 
-echo Merging develop-\>master... 
+
+echo Merging develop-\>master...
 if  [[ ! $(git merge develop) ]]; then
   echo Can\'t merge develop-\>master
   exit
@@ -81,27 +81,34 @@ echo Building production lib...
 if [[ $(npm run build-prod) ]]; then
 
   echo Pushing changes to master...
-  git add /dist
+  git add ./dist
   if  [[ ! $(git commit -m "Production lib $version") ]]; then
     echo Can\'t commit changes to master
     exit
   fi
-  
-  if  [[ ! $(git push) ]]; then
+
+  valid="$(git push --porcelain | grep 'Done')"
+
+  if  [[ ! $valid ]]; then
     echo Can\'t push changes to master
     exit
   fi
-   
+
   echo Creating tag $version ...
-  
-  if  [[ ! $(git tag -a $version -m "$message") ]]; then
+
+  # Empty if success
+  valid="$(git tag -a $version -m '$message')"
+
+  if  [[ ! -z $valid ]]; then
     echo Can\'t create a tag $version
     exit
   fi
-  
+
   echo Pushing tag to origin...
-  
-  if  [[ ! $(git push origin $version) ]]; then
+
+  valid="$(git push origin $version --porcelain | grep 'Done')"
+
+  if  [[ ! $valid ]]; then
     echo Can\'t push tag to origin
     exit
   fi
@@ -111,4 +118,3 @@ else
 fi
 
 echo Done.
-
