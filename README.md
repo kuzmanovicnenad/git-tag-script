@@ -1,5 +1,8 @@
 # git-tag-script
 
+Node: Works with github repos.
+For bitbucket repo use 'bitbucket-repo' branch
+
 ## Example
 
 ```shell
