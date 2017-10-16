@@ -81,7 +81,7 @@ echo Building production lib...
 if [[ $(npm run build-prod) ]]; then
 
   echo Pushing changes to master...
-  git add /dist
+  git add ./dist
   if  [[ ! $(git commit -m "Production lib $version") ]]; then
     echo Can\'t commit changes to master
     exit
