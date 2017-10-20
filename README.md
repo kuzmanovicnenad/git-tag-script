@@ -1,8 +1,6 @@
 # git-tag-script
 
-Note:
-
-For github repo use [master](https://github.com/kuzmanovicnenad/git-tag-script/tree/master)
+Note: Use this script for github repo.
 
 For bitbucket repo use [bitbucket-repo](https://github.com/kuzmanovicnenad/git-tag-script/tree/bitbucket-repo)
 
