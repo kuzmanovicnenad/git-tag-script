@@ -1,7 +1,8 @@
 # git-tag-script
 
-Node: Works with github repos.
-For bitbucket repo use 'bitbucket-repo' branch
+Note: Use this script for bitbucket repo.
+
+For github repo use [master](https://github.com/kuzmanovicnenad/git-tag-script/tree/master)
 
 ## Example
 
